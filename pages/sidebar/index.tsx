@@ -46,15 +46,20 @@ export default function App(): JSX.Element {
       <AnimatePresence>
         {isOpen && (
           <motion.aside
-            initial={{ width: 0 }}
+            initial={{
+              width: 0,
+              height: 0,
+            }}
             animate={{
               width: 300,
+              height: "100vh",
             }}
             exit={{
               width: 0,
+              height: 0,
               transition: { delay: 0.7, duration: 0.3 },
             }}
-            className="bg-[#c4a8ff] w-[18.75rem] h-[100vh]"
+            className="bg-[#c4a8ff]"
           >
             <motion.div
               className="mx-[4.5rem] my-[1.4rem]"
