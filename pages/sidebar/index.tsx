@@ -1,4 +1,3 @@
-import "./styles.css";
 import React, { MouseEventHandler, useState } from "react";
 import { AnimatePresence, motion, useCycle } from "framer-motion";
 
@@ -43,7 +42,7 @@ export default function App(): JSX.Element {
     setIsOpen(!isOpen);
 
   return (
-    <main>
+    <main className="flex">
       <AnimatePresence>
         {isOpen && (
           <motion.aside
@@ -55,9 +54,10 @@ export default function App(): JSX.Element {
               width: 0,
               transition: { delay: 0.7, duration: 0.3 },
             }}
+            className="bg-[#c4a8ff] w-[18.75rem] h-[100vh]"
           >
             <motion.div
-              className="container"
+              className="mx-[4.5rem] my-[1.4rem]"
               initial="closed"
               animate="open"
               exit="closed"
@@ -69,6 +69,7 @@ export default function App(): JSX.Element {
                   href={to}
                   whileHover={{ scale: 1.1 }}
                   variants={itemVariants}
+                  className="text-[#f9fafb] text-[1.75rem] block m-[20px]"
                 >
                   {name}
                 </motion.a>
@@ -77,8 +78,13 @@ export default function App(): JSX.Element {
           </motion.aside>
         )}
       </AnimatePresence>
-      <div className="btn-container">
-        <button onClick={cycleOpen}>{isOpen ? "Close" : "Open"}</button>
+      <div className="fixed">
+        <button
+          className="cursor-pointer m-[1.25rem] border-0 px-[0.5rem] py-[1rem] bg-[#f9fafb]"
+          onClick={cycleOpen}
+        >
+          {isOpen ? "Close" : "Open"}
+        </button>
       </div>
     </main>
   );
