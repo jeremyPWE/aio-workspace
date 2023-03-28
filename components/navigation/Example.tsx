@@ -5,7 +5,6 @@ import { Navigation } from "./Navigation";
 
 const sidebar = {
   open: {
-    clipPath: "circle(4200px at 40px 40px)",
     transition: {
       type: "spring",
       stiffness: 20,
@@ -13,7 +12,6 @@ const sidebar = {
     },
   },
   closed: {
-    clipPath: "circle(0px at 40px 40px)",
     transition: {
       delay: 0.5,
       type: "spring",
@@ -33,10 +31,9 @@ export const Example = () => {
       animate={isOpen ? "open" : "closed"}
     >
       <motion.div
-        className="absolute top-0 left-0 bottom-0 w-[100vw] bg-blue-300"
+        className="absolute top-0 left-0 bottom-0 w-[100vw]"
         variants={sidebar}
       />
-      <Navigation />
       <MenuToggle toggle={() => toggleOpen()} />
     </motion.nav>
   );
