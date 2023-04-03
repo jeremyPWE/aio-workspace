@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <Layout></Layout>
+      <Layout>tes conten</Layout>
     </>
   );
 }

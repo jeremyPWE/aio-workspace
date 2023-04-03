@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import Navbar from "./navigation/Navbar";
+import Box from "./Box";
 
 type Props = {
   children?: ReactNode;
@@ -7,9 +8,9 @@ type Props = {
 
 function Content({ children }: Props) {
   return (
-    <div className="w-full">
+    <div className="w-full ml-[-1px]">
       <Navbar />
-      {children}
+      <Box>{children}</Box>
     </div>
   );
 }
