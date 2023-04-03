@@ -16,7 +16,7 @@ function Header({}: Props) {
         name="keywords"
         content="List of keywords related to your website or project"
       />
-      <title>Title of your website or project</title>
+      <title>AIO workspace</title>
     </Head>
   );
 }
