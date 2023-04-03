@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
-import Navbar from "./navigation/Navbar";
 import Sidebar from "./navigation/Sidebar";
+import Content from "./Content";
 
 type Props = {
   children?: ReactNode;
@@ -9,10 +9,9 @@ type Props = {
 function Layout({ children }: Props) {
   return (
     <>
-      <Navbar />
       <div className="flex">
         <Sidebar />
-        {children}
+        <Content>{children}</Content>
       </div>
     </>
   );
